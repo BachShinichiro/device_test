@@ -64,14 +64,14 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "devise_app_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'herokuapp.com'}
+  config.action_mailer.default_url_options = { host: 'warm-headland-17618.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address:        "smtp.gmail.com",
       port:           587,
       user_name:      ENV['MAIL_USER_NAME'],
       password:       ENV['MAIL_PASSWORD'],
-      domain:         'herokuapp.com',
+      domain:         'warm-headland-17618.herokuapp.com',
       enable_starttls_auto: true,
       authentication: :plain
   }
