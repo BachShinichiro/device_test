@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :blogs
   root 'blogs#index'
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  
 end
