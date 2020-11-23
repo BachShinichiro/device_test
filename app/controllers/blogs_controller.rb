@@ -1,8 +1,9 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   def index
-    @blogs = Blog.all
+    @q = Blog.ransack(params[:q])
+    @blogs = @q.result(distinct: true)
   end
 
   def show
@@ -55,6 +56,6 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :content, :image)
   end
 end
